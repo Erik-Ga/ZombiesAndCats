@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+
+
+
+.coords
+{
+    display:flex;
+    margin: 5px;
+    position: absolute;
+    top: 22em;
+}
+.buttons
+{
+    
+}
+.north
+{
+    position: absolute;
+    width: 80px;
+    height: 25px;
+    top: 30.5em;
+    left: 5em;
+}
+.west
+{
+    position: absolute;
+    width: 80px;
+    height: 25px;
+    top: 32.5em;
+}
+.east
+{
+    position: absolute;
+    width: 80px;
+    height: 25px;
+    top: 32.5em;
+    left: 10em;
+}
+.south
+{
+    position: absolute;
+    width: 80px;
+    height: 25px;
+    top: 34.5em;
+    left: 5em;
+}
