@@ -49,3 +49,14 @@ body
     top: 32.5em;
     left: 5em;
 }
+table
+{
+
+    border-color: black;
+    border-style: double;
+}
+td
+{
+    border-color: black;
+    border-style: double;
+}
