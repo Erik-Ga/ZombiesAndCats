@@ -10,6 +10,7 @@ var currentRow = Math.floor(Math.random() * 5); // Current row
 var currentCol = Math.floor(Math.random() * 5); // Current column
 window.onload = displayArray;
 
+
 // Function to display the array in HTML
 function displayArray() {
     var table = "<table>";
@@ -27,6 +28,7 @@ function displayArray() {
     }
     table += "</table>";
     document.getElementById("array-container").innerHTML = table;
+    document.getElementById("current-pos").innerHTML = "Current Position: Row " + (currentRow + 1) + ", Column " + (currentCol + 1);
 }
 
 // Function to update the current row and column
@@ -66,6 +68,4 @@ function navigateRight() {
         updateCurrentPos(currentRow, currentCol + 1);
     }
 }
-
-updateCurrentPos(currentRow, currentCol)
 
