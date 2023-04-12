@@ -6,8 +6,9 @@ let array = [
     ["", "", "", "", ""]
 ];
 
-var currentRow = Math.floor(Math.random() * 5) + 1; // Current row
-var currentCol = Math.floor(Math.random() * 5) + 1; // Current column
+var currentRow = Math.floor(Math.random() * 5); // Current row
+var currentCol = Math.floor(Math.random() * 5); // Current column
+window.onload = displayArray;
 
 // Function to display the array in HTML
 function displayArray() {
