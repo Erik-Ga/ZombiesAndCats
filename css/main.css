@@ -13,6 +13,10 @@ body
 .current-pos {
     background-color: red;
 }
+.zombie-pos
+{
+    background-color: purple;
+}
 
 
 

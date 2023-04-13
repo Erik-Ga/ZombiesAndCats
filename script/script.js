@@ -8,8 +8,12 @@ let array = [
 
 var currentRow = Math.floor(Math.random() * 5); // Current row
 var currentCol = Math.floor(Math.random() * 5); // Current column
-window.onload = displayArray;
 
+let zombieRow = Math.floor(Math.random() * 5)
+let zombieCol = Math.floor(Math.random() * 5)
+
+window.onload = displayArray;
+zombies()
 
 // Function to display the array in HTML
 function displayArray() {
@@ -29,6 +33,7 @@ function displayArray() {
     table += "</table>";
     document.getElementById("array-container").innerHTML = table;
     document.getElementById("current-pos").innerHTML = "Current Position: Row " + (currentRow + 1) + ", Column " + (currentCol + 1);
+    document.getElementById("zombie-pos").innerHTML = "Zombie Position: Row " + (zombieRow + 1) + ", Column " + (zombieCol + 1);
 }
 
 // Function to update the current row and column
@@ -39,6 +44,18 @@ function updateCurrentPos(row, col) {
     array[currentRow][currentCol] = "X" + array[currentRow][currentCol].toString(); // Update new position with marker
     document.getElementById("current-pos").innerHTML = "Current Position: Row " + (currentRow + 1) + ", Column " + (currentCol + 1);
     displayArray(); // Redraw the array with the new current position
+}
+function zombies()
+{
+    zombieRow   
+    for(let z = 0; z < 2; z++)
+    {
+        array[currentRow][currentCol] = array[currentRow][currentCol].toString().replace("X", "");
+        array[zombieRow][zombieCol] = "Z" + array[zombieRow][zombieCol].toString(); // Update new position with marker
+        
+    }
+    document.getElementById("zombie-pos").innerHTML = "Zombie Position: Row " + (zombieRow + 1) + ", Column " + (zombieCol + 1);
+    displayArray();
 }
 
 // Function to navigate up in the array
