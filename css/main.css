@@ -13,21 +13,6 @@ body
 .current-pos {
     background-color: red;
 }
-.zombie-pos
-{
-    background-color: purple;
-}
-.kitty-pos
-{
-    background-color: coral;
-}
-
-
-
-
-
-
-
 
 .coords
 {
@@ -38,33 +23,34 @@ body
 .north
 {
     position: absolute;
-    width: 80px;
-    height: 25px;
-    top: 28.5em;
-    left: 5em;
+    width: 60px;
+    height: 20px;
+    top: 29.5em;
+    left: 10em;
 }
 .west
 {
     position: absolute;
-    width: 80px;
-    height: 25px;
+    width: 60px;
+    height: 20px;
     top: 30.5em;
+    left: 5em;
 }
 .east
 {
     position: absolute;
-    width: 80px;
-    height: 25px;
+    width: 60px;
+    height: 20px;
     top: 30.5em;
-    left: 10em;
+    left: 15em;
 }
 .south
 {
     position: absolute;
-    width: 80px;
-    height: 25px;
-    top: 32.5em;
-    left: 5em;
+    width: 60px;
+    height: 20px;
+    top: 31.5em;
+    left: 10em;
 }
 table
 {
@@ -78,3 +64,10 @@ td
     border-color: black;
     border-style: double;
 }
+.zombie {
+    background-color: purple;
+}
+.kitty {
+    background-color: coral;
+}
+

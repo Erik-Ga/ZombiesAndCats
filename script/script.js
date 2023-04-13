@@ -22,12 +22,18 @@ function displayArray() {
         for (var j = 0; j < array[i].length; j++) {
             if (i === currentRow && j === currentCol) {
                 table += "<td class='current-pos'>" + "X" + "</td>";
-            } else {
+            } 
+            else if (array[i][j].includes("Z")) {
+                table += "<td class='zombie'>" + array[i][j] + "</td>";
+            }
+            else if (array[i][j].includes("K")) {
+                table += "<td class='kitty'>" + array[i][j] + "</td>";
+            }
+            else {
                 table += "<td>" + array[i][j] + "</td>";
             }
         }
         table += "</tr>";
-        document.getElementById("array-container").innerHTML = table;
     }
     table += "</table>";
     document.getElementById("array-container").innerHTML = table;
@@ -35,7 +41,6 @@ function displayArray() {
     document.getElementById("zombie-pos").innerHTML = "Zombie Position: Row " + (zombieRow + 1) + ", Column " + (zombieCol + 1);
     document.getElementById("kitty-pos").innerHTML = "Kitty Position: Row " + (kittyRow + 1) + ", Column " + (kittyCol + 1);
 }
-
 // Function to update the current row and column
 function updateCurrentPos(row, col) {
 
