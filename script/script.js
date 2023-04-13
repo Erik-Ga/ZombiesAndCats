@@ -38,22 +38,24 @@ function displayArray() {
 
 // Function to update the current row and column
 function updateCurrentPos(row, col) {
+
     array[currentRow][currentCol] = array[currentRow][currentCol].toString().replace("X", ""); // Revert last position marker
     currentRow = row;
     currentCol = col;
     array[currentRow][currentCol] = "X" + array[currentRow][currentCol].toString(); // Update new position with marker
     document.getElementById("current-pos").innerHTML = "Current Position: Row " + (currentRow + 1) + ", Column " + (currentCol + 1);
-    
 
 
     for (let i = 0; i < array.length; i++) {
         for (let j = 0; j < array[i].length; j++) {
             if (array[i][j].charAt(0) === "Z") {
+                if (Math.random() < 0.9) { // 90% chance of NOT moving
+                    continue;
+                }
                 if (i > currentRow) {
                     if (array[i - 1][j] === "") {
                         array[i - 1][j] = "Z";
                         array[i][j] = "";
-                        
                     }
                 } else if (i < currentRow) {
                     if (array[i + 1][j] === "") {
@@ -74,8 +76,15 @@ function updateCurrentPos(row, col) {
             }
         }
     }
-    
-    
+
+    const currentSquare = array[currentRow][currentCol];
+    if (currentSquare.includes("Z")) 
+    {
+        alert("Game Over!");
+        location.reload()
+    }
+
+
     displayArray(); // Redraw the array with the new current position
 }
 function zombiesAnKitties() {
@@ -86,12 +95,12 @@ function zombiesAnKitties() {
         array[zombieRow][zombieCol] = "Z" + array[zombieRow][zombieCol].toString(); // Update new position with marker
 
     }
-    for (let k = 0;k < 2; k++) {
+    for (let k = 0; k < 2; k++) {
         let kittyRow = Math.floor(Math.random() * 5)
         let kittyCol = Math.floor(Math.random() * 5)
         array[kittyRow][kittyCol] = "K" + array[kittyRow][kittyCol].toString(); // Update new position with marker
     }
-    
+
     document.getElementById("zombie-pos").innerHTML = "Zombie Position: Row " + (zombieRow + 1) + ", Column " + (zombieCol + 1);
     document.getElementById("kitty-pos").innerHTML = "Kitty Position: Row " + (kittyRow + 1) + ", Column " + (kittyCol + 1);
     displayArray();
