@@ -45,6 +45,17 @@ function updateCurrentPos(row, col) {
     array[currentRow][currentCol] = "X" + array[currentRow][currentCol].toString(); // Update new position with marker
     document.getElementById("current-pos").innerHTML = "Current Position: Row " + (currentRow + 1) + ", Column " + (currentCol + 1);
 
+    if (array[currentRow][currentCol] === "XK") {
+        alert("Congratulations, you have received a cat!");
+        array[currentRow][currentCol] = "X";
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] === "K" && i === currentRow && j === currentCol) {
+                    array[i][j] = "";
+                }
+            }
+        }
+    }
 
     for (let i = 0; i < array.length; i++) {
         for (let j = 0; j < array[i].length; j++) {
