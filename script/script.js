@@ -5,7 +5,7 @@ let array = [
     ["", "", "", "", ""],
     ["", "", "", "", ""]
 ];
-
+var points = 0;
 var currentRow = Math.floor(Math.random() * 5); // Current row
 var currentCol = Math.floor(Math.random() * 5); // Current column
 
@@ -55,12 +55,29 @@ function updateCurrentPos(row, col) {
                 }
             }
         }
+        points++;
+        document.getElementById("points").innerHTML = "Poäng: " + points;
+    }
+    else if( array[currentRow][currentCol] === "XKK")
+    {
+        alert("Congratulations, you have received cats!");
+        array[currentRow][currentCol] = "X";
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] === "KK" && i === currentRow && j === currentCol) {
+                    array[i][j] = "";
+                }
+            }
+        }
+        points++;
+        points++;
+        document.getElementById("points").innerHTML = "Poäng: " + points;
     }
 
     for (let i = 0; i < array.length; i++) {
         for (let j = 0; j < array[i].length; j++) {
             if (array[i][j].charAt(0) === "Z") {
-                if (Math.random() < 0.9) { // 90% chance of NOT moving
+                if (Math.random() < 0.6) { // 90% chance of NOT moving
                     continue;
                 }
                 if (i > currentRow) {
@@ -106,7 +123,7 @@ function zombiesAnKitties() {
         array[zombieRow][zombieCol] = "Z" + array[zombieRow][zombieCol].toString(); // Update new position with marker
 
     }
-    for (let k = 0; k < 2; k++) {
+    for (let k = 0; k < 5; k++) {
         let kittyRow = Math.floor(Math.random() * 5)
         let kittyCol = Math.floor(Math.random() * 5)
         array[kittyRow][kittyCol] = "K" + array[kittyRow][kittyCol].toString(); // Update new position with marker
