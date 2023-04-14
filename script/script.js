@@ -20,7 +20,7 @@ function displayArray() {
     for (var i = 0; i < array.length; i++) {
         table += "<tr>";
         for (var j = 0; j < array[i].length; j++) {
-            if (i === currentRow && j === currentCol) {
+            if (i === currentRow && j === currentCol) { 
                 table += "<td class='current-pos'>" + "X" + "</td>";
                 var imageName = "images/cat" + (i * array.length + j + 1) + ".jpg"; // Example naming convention for image files
                 document.querySelector('.gameimage').src = imageName; // Change image source of element with class "gameimage"
