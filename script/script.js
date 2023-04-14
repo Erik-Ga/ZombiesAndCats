@@ -65,8 +65,7 @@ function updateCurrentPos(row, col) {
         points++;
         document.getElementById("points").innerHTML = "Poäng: " + points;
     }
-    else if( array[currentRow][currentCol] === "XKK")
-    {
+    else if (array[currentRow][currentCol] === "XKK") {
         alert("Congratulations, you have received cats!");
         array[currentRow][currentCol] = "X";
         for (let i = 0; i < array.length; i++) {
@@ -113,8 +112,7 @@ function updateCurrentPos(row, col) {
     }
 
     const currentSquare = array[currentRow][currentCol];
-    if (currentSquare.includes("Z")) 
-    {
+    if (currentSquare.includes("Z")) {
         alert("Game Over!");
         location.reload()
     }
