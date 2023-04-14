@@ -22,15 +22,15 @@ function displayArray() {
         for (var j = 0; j < array[i].length; j++) {
             if (i === currentRow && j === currentCol) {
                 table += "<td class='current-pos'>" + "X" + "</td>";
-                var imageName = "cat" + (i * array.length + j + 1) + ".jpg"; // Example naming convention for image files
+                var imageName = "images/cat" + (i * array.length + j + 1) + ".jpg"; // Example naming convention for image files
                 document.querySelector('.gameimage').src = imageName; // Change image source of element with class "gameimage"
             } else if (array[i][j].includes("Z")) {
                 table += "<td class='zombie'>" + array[i][j] + "</td>";
             } else if (array[i][j].includes("K")) {
                 table += "<td class='kitty'>" + array[i][j] + "</td>";
             } else {
-                var imageName = "cat" + (i * array.length + j + 1) + ".jpg"; // Example naming convention for image files
-                table += "<td><img src='" + imageName + "'></td>";
+                var imageName = "images/cat" + (i * array.length + j + 1) + ".jpg"; // Example naming convention for image files
+                table += "<td><img src='" + imageName + "' width='50' height='50'></td>";
             }
         }
         table += "</tr>";
@@ -83,27 +83,27 @@ function updateCurrentPos(row, col) {
 
     for (let i = 0; i < array.length; i++) {
         for (let j = 0; j < array[i].length; j++) {
-            if (array[i][j].charAt(0) === "Z") {
-                if (Math.random() < 0.6) { // 90% chance of NOT moving
+            if (array[i][j].includes("Z")) {
+                if (Math.random() < 0.6) { // % chance of NOT moving
                     continue;
                 }
                 if (i > currentRow) {
-                    if (array[i - 1][j] === "") {
+                    if (array[i - 1][j] === "" || array[i - 1][j].includes("K")) {
                         array[i - 1][j] = "Z";
                         array[i][j] = "";
                     }
                 } else if (i < currentRow) {
-                    if (array[i + 1][j] === "") {
+                    if (array[i + 1][j] === "" || array[i - 1][j].includes("K")) {
                         array[i + 1][j] = "Z";
                         array[i][j] = "";
                     }
                 } else if (j > currentCol) {
-                    if (array[i][j - 1] === "") {
+                    if (array[i][j - 1] === "" || array[i - 1][j].includes("K")) {
                         array[i][j - 1] = "Z";
                         array[i][j] = "";
                     }
                 } else if (j < currentCol) {
-                    if (array[i][j + 1] === "") {
+                    if (array[i][j + 1] === "" || array[i - 1][j].includes("K")) {
                         array[i][j + 1] = "Z";
                         array[i][j] = "";
                     }
