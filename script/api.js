@@ -1,4 +1,4 @@
-const url = "https://randomuser.me/api/?results=1"
+const url = "https://randomuser.me/api/?results=1" // Detta är API för att generera slumpmässiga "Best cat saver of the day!" :)
 const catsaver = document.getElementById("catsaver")
 
 fetch(url)
@@ -7,7 +7,7 @@ fetch(url)
 
         let users = data.results;
 
-        users.map(function(user)
+        users.map(function(user) // Hämtar en bild av person + namn
         {
             console.log(user)
 

@@ -3,7 +3,6 @@ body
     background-color: rgb(126, 162, 230);
     text-align: center;
 }
-
 .container {
     display: flex;
     justify-content: center;
@@ -19,7 +18,6 @@ body
 .current-pos {
     background-color: red;
 }
-
 .coords
 {
     display:flex;
@@ -81,4 +79,3 @@ td
     width: 500px;
     height: 300px;
 }
-
