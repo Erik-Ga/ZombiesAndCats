@@ -13,20 +13,24 @@
 <body>
     <img class="gameimage" src="images/template.png" />
     <div class="gameinfo">
-        <p id="update">Du hittade katten!</p>
+        <p id="update">Välkommen!</p>
         <p id="points">Poäng: 0</p>
     </div>
     <p id="current-pos">Current Position: Row 1, Column 1</p>
-    <br>
-    <button class="north" onclick="navigateUp()">Norr</button>
-    <button class="south" onclick="navigateDown()">Syd</button>
-    <button class="west" onclick="navigateLeft()">Väst</button>
-    <button class="east" onclick="navigateRight()">Öst</button>
-    <br><br>
-    <div class="arraybox" id="array-container"></div><br>
-    <div class="catsaver" id="catsaver"></div>
-    <p>Best cat saver of the day!</p>
-    <script src="script/api.js"></script>
+    <div class="container">
+        <div class="arraybox" id="array-container"></div>
+    </div>
+    <div bottom: 20px>
+        <button class="north" onclick="navigateUp()">Norr</button>
+        <button class="south" onclick="navigateDown()">Syd</button>
+        <button class="west" onclick="navigateLeft()">Väst</button>
+        <button class="east" onclick="navigateRight()">Öst</button>
+        <br><br><br><br><br>
+        <div class="catsaver" id="catsaver"></div>
+        <p>Best cat saver of the day!</p>
+        <script src="script/api.js"></script>
+    </div>
+    </div>
 </body>
 
 </html>

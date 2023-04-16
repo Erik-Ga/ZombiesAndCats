@@ -5,6 +5,7 @@ let array = [
     ["", "", "", "", ""],
     ["", "", "", "", ""]
 ];
+
 var points = 0;
 var currentRow = Math.floor(Math.random() * 5); // Current row
 var currentCol = Math.floor(Math.random() * 5); // Current column
@@ -20,7 +21,7 @@ function displayArray() {
     for (var i = 0; i < array.length; i++) {
         table += "<tr>";
         for (var j = 0; j < array[i].length; j++) {
-            if (i === currentRow && j === currentCol) { 
+            if (i === currentRow && j === currentCol) {
                 table += "<td class='current-pos'>" + "X" + "</td>";
                 var imageName = "images/cat" + (i * array.length + j + 1) + ".jpg"; // Example naming convention for image files
                 document.querySelector('.gameimage').src = imageName; // Change image source of element with class "gameimage"
@@ -63,6 +64,9 @@ function updateCurrentPos(row, col) {
             }
         }
         points++;
+        if (points == 5) {
+            alert("Grattis!");
+        }
         document.getElementById("points").innerHTML = "Poäng: " + points;
     }
     else if (array[currentRow][currentCol] === "XKK") {
@@ -77,6 +81,9 @@ function updateCurrentPos(row, col) {
         }
         points++;
         points++;
+        if (points == 5) {
+            alert("Grattis!");
+        }
         document.getElementById("points").innerHTML = "Poäng: " + points;
     }
 
@@ -166,4 +173,5 @@ function navigateRight() {
         updateCurrentPos(currentRow, currentCol + 1);
     }
 }
+
 

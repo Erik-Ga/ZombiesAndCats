@@ -1,8 +1,14 @@
 body
 {
     background-color: rgb(126, 162, 230);
+    text-align: center;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 #array-container td {
     width: 50px;
     height: 50px;
@@ -22,35 +28,35 @@ body
 }
 .north
 {
-    position: absolute;
+    position:relative;
     width: 60px;
     height: 20px;
-    top: 29.5em;
-    left: 10em;
+    top: 10px;
+    left: 97px;
 }
 .west
 {
-    position: absolute;
+    position:relative;
     width: 60px;
     height: 20px;
-    top: 30.5em;
-    left: 5em;
+    top: 25px;
+    right: 94px;
 }
 .east
 {
-    position: absolute;
+    position:relative;
     width: 60px;
     height: 20px;
-    top: 30.5em;
-    left: 15em;
+    top: 25px;
+    right: 32px
 }
 .south
 {
-    position: absolute;
+    position:relative;
     width: 60px;
     height: 20px;
-    top: 31.5em;
-    left: 10em;
+    top: 40px;
+    left: 33px;
 }
 table
 {
